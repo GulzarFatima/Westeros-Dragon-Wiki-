@@ -35,8 +35,8 @@
         <div class="dropdown">
           <select name="houseSelect" id="houseSelect">
             <option value="">Select House</option>
-            <option value="house-targaryen">Targaryen</option>
-            <option value="house-velaryon">Velaryon</option>
+            <option value="targaryen">Targaryen</option>
+            <option value="velaryon">Velaryon</option>
           </select>
           <button type="submit">✔️</button>
         </div>
@@ -75,23 +75,6 @@
     <img src="images/bg.png" alt="background-fireplace">
   </div>
   <script src="js/script.js"></script>
-
-  <script>
-    var params = new URLSearchParams(window.location.search);
-    var dragon = params.get("dragonSelect");
-    var house = params.get("houseSelect");
-    var rightPanel = document.querySelector(".right-panel");
-  
-    if (rightPanel) {
-      if (dragon) {
-        rightPanel.innerHTML = dragon;
-      }
-  
-      if (house) {
-        rightPanel.innerHTML = house;
-      }
-    }
-  </script>
 
 
 </body>

@@ -6,7 +6,7 @@ window.onload = function () {
   console.log(dragonForm);
 
   // Check if the form exists
-  if (interestForm) {
+  if (houseForm) {
     
   // Onsubmit event for houseForm
   houseForm.onsubmit = loadHouse;
@@ -32,7 +32,7 @@ window.onload = function () {
 
 
   // Check if the form exists
-  if (interestForm) {
+  if (dragonForm) {
 
    // Onsubmit event for dragonForm
   dragonForm.onsubmit = loadDragon;
