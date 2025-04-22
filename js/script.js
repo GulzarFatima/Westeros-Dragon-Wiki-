@@ -105,29 +105,23 @@ window.onload = function () {
 
 // music play/pause //
 
-// get elements
+// // Get elements
 var music = document.getElementById("background-music");
 var musicBtn = document.getElementById("play-music");
 
-// set default state
-var isPlaying = false;
-
-// event listener - click on/off
+// Add click event
 musicBtn.addEventListener("click", musicSwitch);
 
-// play/pause fucntion
+// Music toggle function
 function musicSwitch() {
 
-  if (isPlaying) {
-    music.pause();
-    musicBtn.textContent = "🔊 Play Music";
-    isPlaying = false;
-
-  } else {
-
+  if (music.paused || music.ended) {
     music.play();
-    musicBtn.textContent = "⏸️ Pause Music";
-    isPlaying = true;
-  }
-};
+    musicBtn.innerHTML = "⏸️ Pause Music";
 
+  } 
+  else {
+    music.pause();
+    musicBtn.innerHTML = "🔊 Play Music";
+  }
+}
