@@ -1,13 +1,19 @@
 window.onload = function () {
 
+  // dragon and house form //
+
+  // get form elements
   var houseForm = document.forms.houseForm;
   var dragonForm = document.forms.dragonForm;
+
   console.log(houseForm);
   console.log(dragonForm);
 
-    
+  // function to handle house selection form
   function loadHouse() {
     var house = houseForm.houseSelect;
+
+    // reset 
     house.style.background = "";
 
     if (house.value === "") {
@@ -15,10 +21,13 @@ window.onload = function () {
       return false;
     }
 
+    // redirect to selected house page
     window.location.href = "house-" + house.value + ".html";
     return false;
-  }
+    }
 
+
+  // function to handle dragon selection form
   function loadDragon() {
     var dragon = dragonForm.dragonSelect;
     dragon.style.background = "";
@@ -28,11 +37,12 @@ window.onload = function () {
       return false;
     }
 
+    // redirect to selected dragon page
     window.location.href = "dragon-" + dragon.value + ".html";
     return false;
   }
 
-  // Eevent handlers
+  // link form to their respective functons
   if (houseForm) {
     houseForm.onsubmit = loadHouse;
   }
@@ -45,9 +55,10 @@ window.onload = function () {
   
 // Interest Form  // 
 
+  // get form elements
   var interestForm = document.forms.interestForm;
 
-  // Check if the form exists
+  // check if the form exists
   if (interestForm) {
     
     interestForm.onsubmit = processInterest;
@@ -80,7 +91,6 @@ window.onload = function () {
     interestForm.style.display = 'none';
 
     // Show thank you box with user's name
-
     var userName = nameInput.value;
   
     // Capitalize first letter
@@ -90,24 +100,22 @@ window.onload = function () {
     thankYouBox.style.display = 'block';
 
     return false; 
-
     }
-
 };
 
-// --- ⏸️ 🔊 Music Play/Pause ---
+// music play/pause //
 
-//Get elements
+// get elements
 var music = document.getElementById("background-music");
 var musicBtn = document.getElementById("play-music");
 
-//Set default state
+// set default state
 var isPlaying = false;
 
-//Event listener
+// event listener - click on/off
 musicBtn.addEventListener("click", musicSwitch);
 
-//Play/pause fucntion
+// play/pause fucntion
 function musicSwitch() {
 
   if (isPlaying) {
@@ -121,6 +129,5 @@ function musicSwitch() {
     musicBtn.textContent = "⏸️ Pause Music";
     isPlaying = true;
   }
-
 };
 
