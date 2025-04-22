@@ -16,7 +16,6 @@ body, html {
   padding: 10px 16px;
   font-size: 16px;
   border: none;
-  border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
   cursor: pointer;
