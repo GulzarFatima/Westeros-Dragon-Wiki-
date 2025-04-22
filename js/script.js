@@ -5,52 +5,40 @@ window.onload = function () {
   console.log(houseForm);
   console.log(dragonForm);
 
-  // Check if the form exists
-  if (houseForm) {
     
-  // Onsubmit event for houseForm
-  houseForm.onsubmit = loadHouse;
-  
   function loadHouse() {
-
     var house = houseForm.houseSelect;
     house.style.background = "";
 
     if (house.value === "") {
       house.style.background = "red";
-
       return false;
     }
 
     window.location.href = "house-" + house.value + ".html";
-
     return false;
-
   }
 
-  };
-
-
-  // Check if the form exists
-  if (dragonForm) {
-
-   // Onsubmit event for dragonForm
-  dragonForm.onsubmit = loadDragon;
-  
   function loadDragon() {
-
     var dragon = dragonForm.dragonSelect;
     dragon.style.background = "";
 
     if (dragon.value === "") {
       dragon.style.background = "red";
-
       return false;
     }
 
     window.location.href = "dragon-" + dragon.value + ".html";
-
     return false;
+  }
+
+  // Eevent handlers
+  if (houseForm) {
+    houseForm.onsubmit = loadHouse;
+  }
+
+  if (dragonForm) {
+    dragonForm.onsubmit = loadDragon;
   }
 
   };
@@ -136,4 +124,3 @@ function musicSwitch() {
 
 };
 
-}
